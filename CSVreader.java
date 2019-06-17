@@ -14,21 +14,17 @@ import java.util.stream.Collectors;
 public class CSVreader {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//List<Employee> files=readFileFromCsv("input.csv");
-		String z="C:\\Users\\User\\eclipse-workspace\\csv1\\inputfile.csv";
+		
+		String z="C:\\Users\\User\\eclipse-workspace\\csv1\\us500.csv";
 		List<Employee1> files = CSVreader.readCSVfile(z);
-		//for(Employee1 f: files)
-		//
-			//System.out.println(f.getFirst_name());
-		//}
+		
 		
 		List<Employee> A = Sortedlist(files);
 		for(Employee ab: A)
 		{
 			System.out.println(ab.getFirst_name());
 		}
-		//filterFileBasedOnCity(files);
+		
 		for(Employee1 b: files)
 		{
 			if(b.getCity().equals("New York"))
@@ -63,7 +59,7 @@ public CSVreader()
 		List<Employee> files=new ArrayList<>();
 		Path PathtofFile=Paths.get(fileName);//to get the filepath
 		try
-		//(BufferedReader br=Files.newBufferedReader(Pathtofile,StandardCharsets.US_ASCII))
+		
 		{ 
 			BufferedReader br = new BufferedReader(new FileReader(fileName));
 			String line=br.readLine();
@@ -76,18 +72,12 @@ public CSVreader()
 			}
 		} catch(IOException ioe)
 		{
-			ioe.printStackTrace(); //it prints the error class and error line
+			ioe.printStackTrace();
 		}
 		return files;
 	}
 	
-	/*private static Employee create_files(String[] attributes) {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
-
-	private static Employee createList(String[] metadata)
-	{
+	
 		String first_name=metadata[0];
 		String last_name=metadata[1];
 		String company_name=metadata[2];
@@ -103,7 +93,19 @@ public CSVreader()
 		return new Employee(first_name.replace("\"", ""),last_name.replace("\"", ""),company_name.replace("\"", ""),address.replace("\"", ""),city.replace("\"", ""),country.replace("\"", ""),state.replace("\"", ""),zip.replace("\"", ""),phone_num1.replace("\"", ""),phone_num2.replace("\"", ""),e_mail.replace("\"", ""),web.replace("\"", ""));
 	
 	}
-	
+	public static void filterFileBasedOnCity(List<Employee1> m)
+	{
+		
+		for(Employee1 f: m)
+		{
+			if(f.getcity().equals("\"New York\""))
+			{
+				System.out.println(f.getFirst_name()+" "+f.getlastName()+" "+f.getcity());
+			}
+			
+		}
+		
+	}
 	
 	
 	}
