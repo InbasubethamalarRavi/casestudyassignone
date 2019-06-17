@@ -104,19 +104,7 @@ public CSVreader()
 	
 	}
 	
-	/*public static void filterFileBasedOnCity(List<Employee> m)
-	{
-		//List<Employee> ans=m.stream().filter(i->i.getcity().equals("New York")).collect(Collectors.toList());
-		for(Employee f: m)
-		{
-			if(f.getcity().equals("\"New York\""))
-			{
-				System.out.println(f.getFirst_name()+" "+f.getlastName()+" "+f.getcity());
-			}
-			
-		}
-		
-	}*/
-
+	
+	
 	}
 
